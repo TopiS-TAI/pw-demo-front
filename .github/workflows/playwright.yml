@@ -8,6 +8,11 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    services:
+      backend:
+        image: taitopi/todos-backend:latest
+        ports:
+          - 8000:8000
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
